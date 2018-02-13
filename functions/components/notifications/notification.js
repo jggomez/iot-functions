@@ -3,7 +3,7 @@ const admin = require("firebase-admin");
 exports.handler = (event) => {
 
     console.log("movhabitacion");
-    console.log(event.params.idHogar);
+    console.log(event.params.idHome);
     console.log(event.data.val());
 
     // Notification details.
@@ -14,7 +14,7 @@ exports.handler = (event) => {
         }
     };
 
-    admin.messaging().sendToTopic(event.params.idHogar, payload)
+    admin.messaging().sendToTopic(event.params.idHome, payload)
         .then(response => {
             console.log(response);
         }).catch(error => {
